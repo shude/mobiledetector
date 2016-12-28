@@ -17,9 +17,9 @@ class MobileDetector extends Component {
 
 	private $_md;
 	public  $rewritePaths = false;
-	public  $mobileViewPath  = '@app\views\mobile';
-    public  $desktopViewPath = '@app\views\desktop';
-    public  $tabletViewPath  = '@app\views\tablet';
+	public  $mobileViewPath  = '@app/views/mobile';
+    public  $desktopViewPath = '@app/views/desktop';
+    public  $tabletViewPath  = '@app/views/tablet';
 
     private $_device = 'desktop';
 
@@ -36,15 +36,18 @@ class MobileDetector extends Component {
             $this->_device = 'tablet';
             if($this->rewritePaths){
                 Yii::$app->setViewPath($this->tabletViewPath);
+                Yii::$app->setLayoutPath($this->tabletViewPath.'/layouts');
             }
         }elseif ($this->_md->isMobile()){
             $this->_device = 'mobile';
             if($this->rewritePaths){
                 Yii::$app->setViewPath($this->mobileViewPath);
+                Yii::$app->setLayoutPath($this->mobileViewPath.'/layouts');
             }
         }else{
             if($this->rewritePaths){
                 Yii::$app->setViewPath($this->desktopViewPath);
+                Yii::$app->setLayoutPath($this->desktopViewPath.'/layouts');
             }
         }
 	}
