@@ -1,5 +1,5 @@
 {
-	"name": "shude/yii2-mobiledetector",
+	"name": "shude/mobiledetector",
 	"description": "Yii2 extension for Mobile-Detect library",
 	"type": "yii2-extension",
 	"keywords": ["yii2","extension","widget","device","detect","mobile","phone","tablet","desktop"],
